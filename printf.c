@@ -11,7 +11,7 @@
 int _printf(const char *format, ...)
 {
 	va_list dp; /* Declaring a list of arguments */
-	int count = 0, c;
+	int c;
 	char *s;
 
 	va_start(dp, format); /* Starting the list from format */
@@ -26,7 +26,6 @@ int _printf(const char *format, ...)
 			{
 				c = va_arg(dp, int);
 				_putchar(c);
-				count++;
 			}
 			else if (*format == 's')
 			{
@@ -35,21 +34,18 @@ int _printf(const char *format, ...)
 				{
 					_putchar(*s);
 					s++;
-					count++;
 				}
 			}
 			else if (*format == '%')
 			{
 				_putchar('%');
-				count++;
 			}
 		}
 		else
 		{
 			_putchar(*format);
-			count++;
 		}
 		format++;
 	}
-	return (count);
+	return (0);
 }

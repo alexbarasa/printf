@@ -1,7 +1,6 @@
 #include <stdarg.h>
 #include <unistd.h>
 #include "main.h"
-#include <stdlib.h>
 /**
  * _printf - Prints output acording to the passed format
  *
@@ -11,12 +10,10 @@
 int _printf(const char *format, ...)
 {
 	va_list dp; /* Declaring a list of arguments */
-	int c;
+	int count = 0, c;
 	char *s;
 
 	va_start(dp, format); /* Starting the list from format */
-	if (format == NULL)
-		return (1);
 	while (*format)
 	{
 		if (*format == '%')
@@ -26,6 +23,7 @@ int _printf(const char *format, ...)
 			{
 				c = va_arg(dp, int);
 				_putchar(c);
+				count++;
 			}
 			else if (*format == 's')
 			{
@@ -33,19 +31,22 @@ int _printf(const char *format, ...)
 				while (*s != '\0')
 				{
 					_putchar(*s);
+					count++;
 					s++;
 				}
 			}
 			else if (*format == '%')
 			{
 				_putchar('%');
+				count++;
 			}
 		}
 		else
 		{
 			_putchar(*format);
+			count++;
 		}
 		format++;
 	}
-	return (0);
+	return (count);
 }

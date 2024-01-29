@@ -30,10 +30,13 @@ int print_format(char specifier, va_list args_ptr)
 	{
 		count = print_digit((long)va_arg(args_ptr, unsigned int), 16);
 	}
+	else if (specifier == 'b')
+	{
+		count = print_digit((long)va_arg(args_ptr, unsigned int), 2);
+	}
 	else if (specifier == '%')
 	{
 		count += _putchar('%');
-		specifier++;
 	}
 	else
 	{

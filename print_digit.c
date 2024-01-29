@@ -25,6 +25,8 @@ int print_digit(long n, int base)
 	{
 		count = _putchar(symbols[n]);
 	}
+	else if (n == 0)
+		count = '0';
 	else
 	{
 		count = print_digit(n / base, base);

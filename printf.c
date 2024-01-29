@@ -16,7 +16,7 @@ int _printf(const char *format, ...)
 
 	va_start(dp, format); /* Starting the list from format */
 	if (format == NULL)
-		return (-1);
+		return (1);
 	while (*format)
 	{
 		if (*format == '%')

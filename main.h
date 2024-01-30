@@ -6,5 +6,6 @@ int _putchar(char c);
 int print_digit(long n, int base);
 int print_string(char *str);
 int print_format(char specifier, va_list args_ptr);
+int print_hexa(long n, int base);
 #endif
 

@@ -38,6 +38,10 @@ int print_format(char specifier, va_list args_ptr)
 	{
 		count += _putchar('%');
 	}
+	else if (specifier == 'X')
+	{
+		count = print_hexa((long)va_arg(args_ptr, unsigned int), 16);
+	}
 	else
 	{
 		_putchar('%');

@@ -1,7 +1,6 @@
 #include <stdarg.h>
 #include "main.h"
 #include <unistd.h>
-
 /**
  * print_digit - Prints the digits of a given number either
  * in base 10 (decimal), base 16 (hexadecimal) or base 2 (binary)
@@ -14,7 +13,7 @@ int print_digit(long n, int base)
 {
 	int count = 0;
 	char *symbols = "0123456789abcdef";
-	
+
 	if (n < 0)
 	{
 		write(1, "-", 1);

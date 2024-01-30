@@ -1,7 +1,6 @@
 #include <stdarg.h>
 #include "main.h"
 #include <unistd.h>
-
 /**
  * print_octal - Prints the digits of a given number in base 8 (octal)
  *
@@ -11,7 +10,7 @@
 int print_octal(long n, int base)
 {
 	int count = 0;
-	
+
 	if (n < 0)
 	{
 		write(1, "-", 1);

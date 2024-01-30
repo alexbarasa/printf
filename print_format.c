@@ -15,13 +15,9 @@ int print_format(char specifier, va_list args_ptr)
 
 	count = 0;
 	if (specifier == 'c')
-	{
 		count = _putchar(va_arg(args_ptr, int));
-	}
 	else if (specifier == 's')
-	{
 		count = print_string(va_arg(args_ptr, char *));
-	}
 	else if (specifier == 'd' || specifier == 'i')
 	{
 		count = print_digit((long)va_arg(args_ptr, int), 10);
@@ -42,6 +38,10 @@ int print_format(char specifier, va_list args_ptr)
 	{
 		count = print_hexa((long)va_arg(args_ptr, unsigned int), 16);
 	}
+	else if (specifier == 'o')
+		count = print_octal((long)va_arg(args_ptr, unsigned int), 8);
+	else if (specifier == 'u')
+		count = print_hexa((long)va_arg(args_ptr, unsigned int), 10);
 	else
 	{
 		_putchar('%');

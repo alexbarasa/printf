@@ -1,39 +1,34 @@
 #include <stdarg.h>
 #include "main.h"
 #include <unistd.h>
+
 /**
  * print_digit - Prints the digits of a given number either
  * in base 10 (decimal), base 16 (hexadecimal) or base 2 (binary)
  *
  * @n: Long integer
  * @base: The base to be converted to
- * Return: Converted number
+ * Return: The number of characters printed
  */
 int print_digit(long n, int base)
 {
-	int count;
-	char *symbols;
-
-	count = 0;
-	symbols = "0123456789abcdefABCDEF";
+	int count = 0;
+	char *symbols = "0123456789abcdef";
+	
 	if (n < 0)
 	{
 		write(1, "-", 1);
-		return (print_digit(-n, base) + 1);
+		count++;
+		n = -n;
 	}
-	else if (n < base)
+	if (n < base)
 	{
-		count = _putchar(symbols[n]);
-	}
-	else if (n == 0)
-	{
-		count = _putchar('0');
-		return (count);
+		count += _putchar(symbols[n]);
 	}
 	else
 	{
-		count = print_digit(n / base, base);
-		return (count + print_digit(n % base, base));
+		count += print_hexa(n / base, base);
+		count += _putchar(symbols[n % base]);
 	}
-	return (0);
+	return (count);
 }

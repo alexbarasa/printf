@@ -14,8 +14,8 @@ int print_string(char *str)
 	count = 0;
 	if (str == NULL)
 	{
-		/*count += write(1, "(null)", 6);*/
-		return (-1);
+		count += write(1, "(null)", 6);
+		return (count);
 	}
 	while (*str)
 	{

@@ -34,6 +34,8 @@ int print_format(char specifier, va_list args_ptr)
 		count = print_hexa((long)va_arg(args_ptr, unsigned int), 10);
 	else if (specifier == 'p')
 		count = print_memory_address(va_arg(args_ptr, void *));
+	else if (specifier == 'S')
+		count = print_special_string(va_arg(args_ptr, char *));
 	else
 	{
 		_putchar('%');

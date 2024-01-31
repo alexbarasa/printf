@@ -19,6 +19,11 @@ int print_memory_address(void *ptr)
 	buffer[0] = '0';
 	buffer[1] = 'x';
 	count += 2;
+	if (ptr == NULL)
+	{
+		write(1, "(nil)(nil)", 10);
+		return (-1);
+	}
 	for (i = (sizeof(uintptr_t) * 2) - 1; i >= 0; i--)
 	{
 		if (((address >> (i * 4)) & 0xf) != 0)

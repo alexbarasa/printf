@@ -33,7 +33,7 @@ int print_format(char specifier, va_list args_ptr)
 	else if (specifier == 'u')
 		count = print_hexa((long)va_arg(args_ptr, unsigned int), 10);
 	else if (specifier == 'p')
-		count = print_digit((long)va_arg(args_ptr, unsigned int), 16);
+		count = print_memory_address(va_arg(args_ptr, void *));
 	else
 	{
 		_putchar('%');

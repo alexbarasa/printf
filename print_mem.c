@@ -2,7 +2,6 @@
 #include "main.h"
 #include <unistd.h>
 #include <stdint.h>
-
 /**
  * print_memory_address - Prints the memory address of a given pointer.
  *
@@ -16,7 +15,7 @@ int print_memory_address(void *ptr)
 	char *symbols = "0123456789abcdef";
 	char buffer[20];
 	int start = 0, i;
-	
+
 	buffer[0] = '0';
 	buffer[1] = 'x';
 	count += 2;
@@ -34,6 +33,6 @@ int print_memory_address(void *ptr)
 	}
 	buffer[count] = '\0';
 	write(1, buffer, count);
-	return count;
+	return (count);
 }
 

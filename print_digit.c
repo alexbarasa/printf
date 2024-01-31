@@ -26,7 +26,7 @@ int print_digit(long n, int base)
 	}
 	else
 	{
-		count += print_hexa(n / base, base);
+		count += print_digit(n / base, base);
 		count += _putchar(symbols[n % base]);
 	}
 	return (count);

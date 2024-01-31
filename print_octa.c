@@ -5,6 +5,7 @@
  * print_octal - Prints the digits of a given number in base 8 (octal)
  *
  * @n: Long integer
+ * @base: Interger for the base to be converted to
  * Return: The number of characters printed
  */
 int print_octal(long n, int base)
